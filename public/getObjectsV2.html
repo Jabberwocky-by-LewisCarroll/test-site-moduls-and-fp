@@ -1,0 +1,81 @@
+<!--
+    Эта страница отличается от getObjects.html тем, что использует другой принцип генерации объектов.
+    Здесь используется шаблонный элемент для создания карточек объектов.
+    JavaScript клонирует шаблон в зависимости от того сколько объектов пришло из базы данных и заполняет их.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список объектов V2</title>
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <script src="../src/scripts/getObjectsV2.js"></script>
+    <script src="../src/scripts/navBar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Окно с формой редактирования карточки объекта -->
+    <div class="popup-window edit hide">
+        <form class="form edit">
+            <div class="btn__exit-form">
+                <div class="btn__item a"></div>
+                <div class="btn__item b"></div>
+            </div>
+            <h3>Редактирование</h3>
+            <input type="text" name="name" value="">
+            <input type="text" name="surname" value="">
+            <input type="email" name="email" value="">
+            <input type="text" name="id" value="">
+            <button class="link-btn edit" type="submit">Сохранить</button>
+        </form>
+    </div>
+
+    <!-- Окно с формой добавления карточки объекта -->
+    <div class="popup-window add hide">
+        <form class="form add">
+            <div class="btn__exit-form">
+                <div class="btn__item a"></div>
+                <div class="btn__item b"></div>
+            </div>
+            <h3>Создание</h3>
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="text" name="surname" placeholder="Фамилия" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button class="link-btn add" type="submit">Добавить</button>
+        </form>
+    </div>
+
+    <!-- Контейнер для навбара -->
+    <div id="navbar"></div>
+
+    <!-- Основной контент -->
+    <div class="main-wrapper">
+        <div class="space__4rem"></div>
+        <h1>Список объектов</h1>
+        <div class="btn-add__wrapper">
+            <button class="link-btn add" type="button">Добавить</button>
+        </div>
+
+        <div class="space__1rem"></div>
+
+        <!-- Контейнер для карточек объектов с шаблоном карточки -->
+        <div class="obj-wrapper">
+            <template id="template">
+                <div class="obj-card">
+                    <p>Имя: <span class="name"></span></p>
+                    <p>Фамилия: <span class="surname"></span></p>
+                    <p>Email: <span class="email"></span></p>
+                    <p>ID: <span class="id"></span></p>
+                    <div class="obj-card__btns">
+                        <a class="link-btn view card" href="#">Подробнее</a>
+                        <button class="link-btn edit card" type="button">Изменить</button>
+                        <button class="link-btn delete card" type="button">Удалить</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+</body>
+</html>

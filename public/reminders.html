@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <script src="../src/scripts/reminders.js"></script>
+    <script src="../src/scripts/navBar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Контейнер для навбара -->
+    <div id="navbar"></div>
+    
+    <div class="main-wrapper">
+        <div class="space__4rem"></div>
+        <h1>Напоминания</h1>
+        <div class="tables__btns">
+            <div class="flex-row align-items__center">
+                <button id="tables__btn-com">Завершённые</button>
+                <button id="tables__btn-act">Актуальные</button>
+            </div>
+            <div class="space__1rem"></div>
+            <button class="link-btn add">Добавить напоминание</button>
+        </div>
+        <div class="tables-wrapper">
+            <table id="remComTab">
+                <thead>
+                    <tr class="tr__alt">
+                        <th>Название</th>
+                        <th>Статус</th>
+                        <th>Дата напоминания</th>
+                        <th>Время напоминания</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody id="remComContainer">
+                    <template id="remComTabRows">
+                        <tr>
+                            <td id="remName"></td>
+                            <td id="remStatus"></td>
+                            <td id="remRemindDate"></td>
+                            <td id="remRemindTime"></td>
+                            <td id="remID"></td>
+                        </tr>
+                    </template>
+                </tbody>
+                <tfoot>
+                    <tr class="tr__alt">
+                        <td colspan="4">Количество напоминаний: </td>
+                        <td><span class="remComCount">0</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table id="remActTab">
+                <thead>
+                    <tr class="tr__alt">
+                        <th>Название</th>
+                        <th>Статус</th>
+                        <th>Дата напоминания</th>
+                        <th>Время напоминания</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody id="remActContainer">
+                    <template id="remActTabRows">
+                        <tr>
+                            <td id="remName"></td>
+                            <td id="remStatus"></td>
+                            <td id="remRemindDate"></td>
+                            <td id="remRemindTime"></td>
+                            <td id="remID"></td>
+                        </tr>
+                    </template>
+                </tbody>
+                <tfoot>
+                    <tr class="tr__alt">
+                        <td colspan="4">Количество напоминаний: </td>
+                        <td><span class="remActCount">0</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
