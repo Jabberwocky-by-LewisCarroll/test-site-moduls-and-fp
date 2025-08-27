@@ -1,45 +1,76 @@
-# Dependencies
+# Зависимости и пакеты
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment variables
+# Сборка и дистрибутивы
+dist/
+build/
+out/
+.output/
+.nuxt/
+.next/
+.vercel/
+
+# IDE и редакторы
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS специфичные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Временные файлы
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# Логи
+logs/
+*.log
+
+# Environment переменные
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-logs
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
+# Coverage отчеты
 coverage/
 *.lcov
+.nyc_output/
 
-# Build outputs
-dist/
-build/
-.tmp/
+# Тестирование
+.jest/
+test-results/
+playwright-report/
 
-# Cache
-.cache/
-.parcel-cache/
+# Инструменты разработки
+.eslintcache
+.stylelintcache
+
+# Резервные копии
+*.bak
+*.backup
+*.orig
+
+# Специфичные для проекта (если понадобятся)
+# config/local.js
+# src/scripts/temp/
+# public/uploads/
