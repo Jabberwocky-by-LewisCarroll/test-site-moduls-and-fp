@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const role = window.localStorage.getItem('role');
     const arrRoles = role.split(',');
     if (arrRoles.includes('remindWebUser')) {
-        const addBtn = document.querySelector('link-btn.add');
+        const addBtn = document.querySelector('.link-btn.add');
         if (addBtn) {
             addBtn.style.display = 'none';
         };
