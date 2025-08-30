@@ -1,8 +1,8 @@
-import {apiEndpoints, localStorageKeys} from './config.js';
+import {API_ENDPOINTS, LOCAL_STORAGE_ITEMS} from './config.js';
 
 /**
  * Универсальная функция для API запросов
- * @param {string} endpoint - ключ из apiEndpoints
+ * @param {string} endpoint - ключ из API_ENDPOINTS
  * @param {Object} options - опции запроса (method, body и т.д.)
  * @returns {Promise<Object>} - ответ API
 */
@@ -15,7 +15,7 @@ export async function apiRequest(endpoint, options ={}) {
     };
 
     // Формируем URL и включаем туда sessionID
-    const url = endpoint + localStorageKeys.sessionID;
+    const url = endpoint + LOCAL_STORAGE_ITEMS.SESSION_ID;
 
     // Базовая конфигурация параметров fetch()
     const defaultConfig = {
