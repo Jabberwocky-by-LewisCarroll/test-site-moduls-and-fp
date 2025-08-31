@@ -10,12 +10,12 @@ import { CONFIG } from './config.js';
 export async function apiRequest(endpoint, options ={}) {
 
     // Проверка существования API endpoint
-    if (!apiEndpoints[endpoint]) {
+    if (!CONFIG.API_ENDPOINTS[endpoint]) {
         throw new Error('Unknown API endpoint: ' + endpoint)
     };
 
     // Формируем URL и включаем туда sessionID
-    const url = endpoint + CONFIGLOCAL_STORAGE.SESSION_ID;
+    const url = endpoint + CONFIG.LOCAL_STORAGE.SESSION_ID;
 
     // Базовая конфигурация параметров fetch()
     const defaultConfig = {
