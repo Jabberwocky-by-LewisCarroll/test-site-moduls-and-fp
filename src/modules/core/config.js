@@ -14,10 +14,4 @@ export const CONFIG = {
         GRAFT_REM: 'https://api.directual.com/good/api/v5/data/inputremind/newDraftRemind?appID=640a9d7b-5015-4ea0-8206-a4eddcef054b&sessionID=',
         CONFIRM_REM: 'https://api.directual.com/good/api/v5/data/inputremind/confirmRemind?appID=640a9d7b-5015-4ea0-8206-a4eddcef054b&sessionID=',
     },
-
-    LOCAL_STORAGE: {
-        SESSION_ID: localStorage.getItem('sessionID'),
-        ROLE: localStorage.getItem('role'),
-    },
-
 };
