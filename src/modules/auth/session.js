@@ -1,6 +1,6 @@
 // Управление сессией
 
-import { LOCAL_STORAGE_ITEMS } from "../core/config.js";
+import { CONFIG } from "../core/config.js";
 
 export const session = {
 

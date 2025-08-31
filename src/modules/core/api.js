@@ -1,4 +1,4 @@
-import {API_ENDPOINTS, LOCAL_STORAGE_ITEMS} from './config.js';
+import { CONFIG } from './config.js';
 
 /**
  * Универсальная функция для API запросов
@@ -15,7 +15,7 @@ export async function apiRequest(endpoint, options ={}) {
     };
 
     // Формируем URL и включаем туда sessionID
-    const url = endpoint + LOCAL_STORAGE_ITEMS.SESSION_ID;
+    const url = endpoint + CONFIGLOCAL_STORAGE.SESSION_ID;
 
     // Базовая конфигурация параметров fetch()
     const defaultConfig = {
