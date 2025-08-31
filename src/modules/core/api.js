@@ -1,4 +1,5 @@
 import { CONFIG } from './config.js';
+import { session } from './session.js';
 
 /**
  * Универсальная функция для API запросов
@@ -15,7 +16,7 @@ export async function apiRequest(endpoint, options ={}) {
     };
 
     // Формируем URL и включаем туда sessionID
-    const url = endpoint + CONFIG.LOCAL_STORAGE.SESSION_ID;
+    const url = endpoint + session.getSessionID();
 
     // Базовая конфигурация параметров fetch()
     const defaultConfig = {
@@ -60,7 +61,7 @@ export const api = {
 
     // Авторизация
     login: async (credentials) => {
-        const result = await apiRequest(apiEndpoints.auth, {
+        const result = await apiRequest(CONFIG.API_ENDPOINTS.AUTH, {
             method: 'POST',
             body: JSON.stringify(credentials),
         });
@@ -78,7 +79,7 @@ export const api = {
 
     // Регистрация
     reg: async (userData) => {
-        return apiRequest(apiEndpoints.reg, {
+        return apiRequest(CONFIG.API_ENDPOINTS.REG, {
             method: 'POST',
             body: JSON.stringify(userData),
         });
@@ -86,7 +87,7 @@ export const api = {
 
     // Добавление тестового объекта
     addTestObj: async (objData) => {
-        return apiRequest(apiEndpoints.addTestObj, {
+        return apiRequest(CONFIG.API_ENDPOINTS.ADD_TEST_OBJ, {
             method: 'POST',
             body: JSON.stringify(objData),
         });
@@ -94,7 +95,7 @@ export const api = {
 
     // Изменение тестового объекта
     editTestObj: async (objData) => {
-        return apiRequest(apiEndpoints.editDelTestObj, {
+        return apiRequest(CONFIG.API_ENDPOINTS.EDIT_DEL_TEST_OBJ, {
             method: 'POST',
             body: JSON.stringify(objData),
         });
@@ -102,17 +103,17 @@ export const api = {
 
     // Получение актуальных напоминаний
     getActiveReminders: async () => {
-        return apiRequest(apiEndpoints.activeRems);
+        return apiRequest(CONFIG.API_ENDPOINTS.ACTIVE_REMS);
     },
 
     // Получение завершённых напоминаний
     getCompleteReminders: async () => {
-        return apiRequest(apiEndpoints.completeRems);
+        return apiRequest(CONFIG.API_ENDPOINTS.COMPLETE_REMS);
     },
 
     // Создание черновика напоминания
     createDraftReminder: async (reminderData) => {
-        return apiRequest(apiEndpoints.graftRem, {
+        return apiRequest(CONFIG.API_ENDPOINTS.GRAFT_REM, {
             method: 'POST',
             body: JSON.stringify(reminderData)
         });
@@ -120,7 +121,7 @@ export const api = {
 
     // Подтверждение создания напоминания
     confirmReminder: async (reminderData) => {
-        return apiRequest(apiEndpoints.confirmRem, {
+        return apiRequest(CONFIG.API_ENDPOINTS.CONFIRM_REM, {
             method: 'POST',
             body: JSON.stringify(reminderData)
         });
