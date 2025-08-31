@@ -1,12 +1,10 @@
 // Управление сессией
 
-import { CONFIG } from "../core/config.js";
-
 export const session = {
 
     // Получение sessionID
     getSessionID: () => {
-        return CONFIG.LOCAL_STORAGE.SESSION_ID;
+        return localStorage.getItem('sessionID');
     },
 
     // Установка sessionID
@@ -21,7 +19,7 @@ export const session = {
 
     // Получение роли
     getRole: () => {
-        return CONFIG.LOCAL_STORAGE.ROLE;
+        return localStorage.getItem('role');
     },
 
     // Установка роли
